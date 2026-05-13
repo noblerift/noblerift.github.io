@@ -9,17 +9,9 @@
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-    :root {
-      --black: #080808;
-      --silver-dim: #8a8a8a;
-      --silver-mid: #b0aeac;
-      --silver-bright: #c8c6c3;
-    }
-
     html, body {
-      height: 100%;
-      background: var(--black);
-      color: var(--silver-mid);
+      background: #080808;
+      color: #b0aeac;
       font-family: 'Montserrat', sans-serif;
     }
 
@@ -27,13 +19,12 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
-      min-height: 100vh;
       padding: 60px 24px 80px;
     }
 
     .logo-wrap {
-      width: min(300px, 68vw);
+      width: 280px;
+      max-width: 72vw;
       opacity: 0;
       animation: fadeUp 1.2s ease forwards;
       animation-delay: 0.2s;
@@ -45,16 +36,18 @@
     }
 
     .divider-v {
+      display: block;
       width: 1px;
       height: 48px;
-      background: linear-gradient(to bottom, transparent, var(--silver-dim), transparent);
-      margin: 36px 0;
+      margin: 36px auto;
+      background: #8a8a8a;
       opacity: 0;
       animation: fadeUp 1s ease forwards;
       animation-delay: 0.6s;
     }
 
     .statement {
+      width: 100%;
       max-width: 560px;
       text-align: center;
       opacity: 0;
@@ -65,9 +58,9 @@
     .statement p {
       font-family: 'Cormorant Garamond', serif;
       font-weight: 300;
-      font-size: clamp(15px, 2.2vw, 18px);
+      font-size: 17px;
       line-height: 1.9;
-      color: var(--silver-mid);
+      color: #b0aeac;
       margin-bottom: 1.4em;
     }
 
@@ -75,14 +68,15 @@
 
     .statement strong {
       font-weight: 400;
-      color: var(--silver-bright);
+      color: #c8c6c3;
     }
 
     .divider-h {
+      display: block;
       width: 40px;
       height: 1px;
-      background: var(--silver-dim);
-      margin: 44px 0;
+      background: #8a8a8a;
+      margin: 44px auto;
       opacity: 0;
       animation: fadeUp 1s ease forwards;
       animation-delay: 1.3s;
@@ -98,15 +92,13 @@
     }
 
     .socials a {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--silver-dim);
+      color: #8a8a8a;
       text-decoration: none;
       transition: color 0.3s ease;
+      display: flex;
     }
 
-    .socials a:hover { color: var(--silver-bright); }
+    .socials a:hover { color: #c8c6c3; }
     .socials svg { width: 20px; height: 20px; fill: currentColor; }
 
     .email-link {
@@ -115,7 +107,7 @@
       font-size: 11px;
       letter-spacing: 0.25em;
       text-transform: uppercase;
-      color: var(--silver-dim);
+      color: #8a8a8a;
       text-decoration: none;
       transition: color 0.3s ease;
       opacity: 0;
@@ -124,16 +116,11 @@
       margin-top: 24px;
     }
 
-    .email-link:hover { color: var(--silver-bright); }
+    .email-link:hover { color: #c8c6c3; }
 
     @keyframes fadeUp {
       from { opacity: 0; transform: translateY(16px); }
       to   { opacity: 1; transform: translateY(0); }
-    }
-
-    @media (max-width: 480px) {
-      .statement p { font-size: 15px; }
-      .logo-wrap { width: min(240px, 75vw); }
     }
   </style>
 </head>
@@ -143,7 +130,7 @@
     <img src="NR.png" alt="Noble Rift">
   </div>
 
-  <div class="divider-v"></div>
+  <span class="divider-v"></span>
 
   <div class="statement">
     <p><strong>Noble Rift builds watches on controlled tension.</strong><br>
@@ -164,7 +151,7 @@
     Which is exactly why the right people can't look away.</strong></p>
   </div>
 
-  <div class="divider-h"></div>
+  <span class="divider-h"></span>
 
   <div class="socials">
     <a href="https://www.instagram.com/noble_rift/" target="_blank" rel="noopener" aria-label="Instagram">
